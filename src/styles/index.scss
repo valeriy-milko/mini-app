@@ -1,0 +1,56 @@
+@import 'import.scss';
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: $font-primary;
+  color: $text-primary;
+  background-color: $primary-bg;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden;
+  min-height: 100vh;
+  box-sizing: border-box;
+}
+
+code {
+  font-family: $font-secondary;
+}
+
+svg {
+  fill: currentColor;
+}
+
+p {
+  margin: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  font-size: inherit;
+}
+
+li {
+  margin-bottom: 0;
+  clear: both;
+  position: relative;
+}
+
+.app {
+  position: relative;
+  background-image: url("../assets/img/swirl_pattern.png");
+  background-repeat: repeat;
+  &-container {
+    background-color: rgba($primary, .4);
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 2;
+  }
+}
