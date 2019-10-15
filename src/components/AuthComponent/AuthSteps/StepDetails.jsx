@@ -7,10 +7,7 @@ const minMaxNormalize = max => value => {
     let v;
     let result = value > max;
     if (value <= 0) return false;
-
-    if(result === false) {
-        v = value;
-    }
+    if(result === false) v = value;
     return v;
 };
 

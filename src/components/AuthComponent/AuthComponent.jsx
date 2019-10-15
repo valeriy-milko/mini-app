@@ -1,9 +1,7 @@
 import React from "react";
-import { connect } from 'react-redux';
 import StepCredentials from './AuthSteps/StepCredentials';
 import StepDetails from './AuthSteps/StepDetails';
 import StepFinal from './AuthSteps/StepFinal';
-import * as globalActions from '../../store/actions/globalActions';
 import './AuthComponent.scss';
 
 class AuthComponent extends React.Component {
@@ -12,9 +10,7 @@ class AuthComponent extends React.Component {
     };
 
     handleSubmit = () => {
-        if (this.state.step < 2) {
-            this.setState({ step: this.state.step + 1 });
-        }
+        this.setState({ step: this.state.step + 1 });
     };
 
     handleStepBack = () => {
@@ -65,17 +61,5 @@ class AuthComponent extends React.Component {
     }
 }
 
-const mapStateToProps = (state) => {
-    return {
-        step: state.global.step,
-    }
-};
-
-const mapDispatchToProps = (dispatch) => {
-    return {
-        setStep: (step) => dispatch(globalActions.setStep(step)),
-    }
-};
-
-export default connect(mapStateToProps, mapDispatchToProps)(AuthComponent);
+export default AuthComponent;
 
